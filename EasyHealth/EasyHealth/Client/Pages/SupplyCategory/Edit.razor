@@ -1,0 +1,29 @@
+﻿@page "/SupplyCategory/Edit/{supplyCategoryId:int}"
+@inject HttpClient http
+@inject NavigationManager navigator
+
+<SupplyCategoryForm supplyCategory="@supplyCategory" OnValidSubmit="@UpdateSupplyCategory"
+                    ButtonTextCancel="Cancelar" ButtonTextSubmit="Atualizar">
+
+</SupplyCategoryForm>
+
+
+@code {
+    [Parameter]
+    public int supplyCategoryId { get; set; }
+    public SupplyCategory supplyCategory { get; set; } = new SupplyCategory();
+
+
+    protected async override Task OnParametersSetAsync()
+    {
+        supplyCategory = await http.GetJsonAsync<SupplyCategory>($"/api/SupplyCategory/Get/{supplyCategoryId}");
+    }
+
+    async Task UpdateSupplyCategory()
+    {
+        supplyCategory = await http.PutJsonAsync<SupplyCategory>($"/api/SupplyCategory/Update", supplyCategory);
+        navigator.NavigateTo("/SupplyCategory");
+    }
+
+
+}

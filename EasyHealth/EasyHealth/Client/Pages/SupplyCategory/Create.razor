@@ -1,0 +1,19 @@
+﻿@page "/SupplyCategory/Create"
+@inject HttpClient http
+@inject NavigationManager navigator
+
+<h3>Nova Categoria</h3>
+<SupplyCategoryForm supplyCategory="@supplyCategory" OnValidSubmit="@CreateSupplyCategory" 
+                    ButtonTextCancel="Cancelar" ButtonTextSubmit="Salvar">
+
+</SupplyCategoryForm>
+
+@code {
+    SupplyCategory supplyCategory = new SupplyCategory();
+
+    async Task CreateSupplyCategory()
+    {
+        await http.PostJsonAsync("/api/SupplyCategory/Add", supplyCategory);
+        navigator.NavigateTo("/SupplyCategory");
+    }
+}
