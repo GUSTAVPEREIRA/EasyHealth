@@ -648,3 +648,11 @@ C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\Easy
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Client\obj\Debug\netstandard2.1\Razor\Pages\Cadastro\SupplyCategory\SupplyCategoryForm.razor.g.cs
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Client\obj\Debug\netstandard2.1\RazorDeclaration\Shared\Pagination.razor.g.cs
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Client\obj\Debug\netstandard2.1\Razor\Shared\Pagination.razor.g.cs
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Client\obj\Debug\netstandard2.1\RazorDeclaration\Shared\Buttons\EditButton.razor.g.cs
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Client\obj\Debug\netstandard2.1\Razor\Shared\Buttons\EditButton.razor.g.cs
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Client\obj\Debug\netstandard2.1\RazorDeclaration\Shared\Buttons\AddButton.razor.g.cs
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Client\obj\Debug\netstandard2.1\RazorDeclaration\Shared\Buttons\CancelButton.razor.g.cs
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Client\obj\Debug\netstandard2.1\RazorDeclaration\Shared\Buttons\DeleteButton.razor.g.cs
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Client\obj\Debug\netstandard2.1\Razor\Shared\Buttons\AddButton.razor.g.cs
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Client\obj\Debug\netstandard2.1\Razor\Shared\Buttons\CancelButton.razor.g.cs
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Client\obj\Debug\netstandard2.1\Razor\Shared\Buttons\DeleteButton.razor.g.cs

@@ -5,7 +5,7 @@
 <h3>Categoria de insumos</h3>
 
 <div>
-    <a class="btn btn-success text-white mb-2" href="SupplyCategory/Create">Adicionar</a>
+    <AddButton Icon="fas fa-plus" Name="Adicionar" Url="SupplyCategory/Create" Css="mb-2"/>    
 </div>
 
 @if (SupplyCategories == null)
@@ -33,19 +33,19 @@ else
                 <tr>
                     <td>@supplyCategory.Name</td>
                     <td>@supplyCategory.Description</td>
-                    <td>
-                        <a class="btn btn-primary text-white" href="/SupplyCategory/Edit/@supplyCategory.Id">Editar</a>
+                    <td>                        
+                        <EditButton Icon="fas fa-edit" Name="Editar" Url="@("/SupplyCategory/Edit/" + supplyCategory.Id)" />
                     </td>
                     <td>
-                        <a class="btn btn-danger text-white" @onclick="@(() => DeleteSupplyCategory(supplyCategory.Id))">Deletar</a>
+                        <DeleteButton Icon="fas fa-trash-alt" Name="Deletar" OnClick="@(() => DeleteSupplyCategory(supplyCategory.Id))"/>                        
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-
-    <Pagination TotalAmountPages="TotalAmountPages" CurrentPage="CurrentPage" Range="3" SelectedPage="SelectedPage">
-    </Pagination>
+    <footer class="page-footer fixed-bottom">
+        <Pagination TotalAmountPages="TotalAmountPages" CurrentPage="CurrentPage" Range="3" SelectedPage="SelectedPage" />
+    </footer>
 }
 
 <ConfirmationForm @ref="Confirmation" OnCancel="@CancelConfirm" OnConfirmation="@DeleteConfirm">
@@ -54,7 +54,7 @@ else
 
 
 @code {
-    List<SupplyCategory> SupplyCategories { get; set; }
+List<SupplyCategory> SupplyCategories { get; set; }
     ConfirmationForm Confirmation;
     int SupplyCategoryId;
     public int TotalAmountPages { get; set; }
@@ -66,7 +66,6 @@ else
         CurrentPage = page;
         await LoadSupplyCategories(page);
     }
-
 
     protected override async Task OnInitializedAsync()
     {
@@ -85,7 +84,7 @@ else
             if (TotalAmountItems == 0)
             {
                 SupplyCategories = new List<SupplyCategory>();
-            } 
+            }
             else
             {
                 if (TotalAmountPages < CurrentPage)
@@ -101,8 +100,6 @@ else
                     PropertyNameCaseInsensitive = true
                 });
             }
-
-
         }
     }
 

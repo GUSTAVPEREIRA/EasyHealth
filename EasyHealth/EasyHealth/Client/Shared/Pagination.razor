@@ -7,10 +7,8 @@
                 <span class="page-link" href="#">@link.Text</span>
             </li>
         }
-
     </ul>
 </nav>
-
 
 @code {
     [Parameter] public int CurrentPage { get; set; } = 1;
@@ -71,8 +69,10 @@
     {
         links = new List<LinkModel>();
 
+        CurrentPage = CurrentPage == 0 ? 1 : CurrentPage;
+  
         //Aqui estou tratando o link da página anterior
-        var isPreviousPageLinkEnable = CurrentPage != 1;
+        var isPreviousPageLinkEnable = CurrentPage > 1;
 
         if (TotalAmountPages == 1)
         {

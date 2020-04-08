@@ -65,6 +65,13 @@ using EasyHealth.Shared.Model;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 9 "C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Client\_Imports.razor"
+using EasyHealth.Client.Shared.Buttons;
+
+#line default
+#line hidden
+#nullable disable
     public partial class App : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
