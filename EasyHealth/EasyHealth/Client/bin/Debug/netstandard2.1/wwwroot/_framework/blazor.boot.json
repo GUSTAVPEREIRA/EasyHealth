@@ -5,8 +5,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "EasyHealth.Client.dll": "sha256-emm2I9tpKoUawlgEmS12CXVwK9K5+tiDHZrbjj4IMow=",
-      "Microsoft.AspNetCore.Blazor.HttpClient.dll": "sha256-bbsWh06yarF\/XcKSWn5FMPZ5xbIvXqZa6x1hh392eoc=",
+      "EasyHealth.Client.dll": "sha256-zIgO+4xdfCjE9acP3CkvJ0OUDTqYZmVihe7iTTLyPiQ=",
       "System.Text.Json.dll": "sha256-pzCorxTCjbUODF5JuRgcHc8gVYEdSaKD9NWA6wZhTPE=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-jSbbdZ+4PD2T6Vi89+Tvmvg3VxTKeCToquIW6x+iTBM=",
       "mscorlib.dll": "sha256-Gqei7bi4XYsHg8yfeIwq9YZf9lFBg0tbqiF7Y4Ep2fU=",
@@ -36,6 +35,7 @@
       "System.Threading.Tasks.Extensions.dll": "sha256-TkH6yxFQlTfY8NfznePrCdYJiEVpM9Dqy4Uu4H9qk10=",
       "System.Numerics.Vectors.dll": "sha256-HeVFOPKuQ\/cd\/e4EaYZ1MpAn02HW8gy+5Gymj0LSZIE=",
       "System.Text.Encodings.Web.dll": "sha256-hbEA2pdvgll2bWeJXCtehEV3kl3WFnBgQj6ttcesEA4=",
+      "Microsoft.AspNetCore.Blazor.HttpClient.dll": "sha256-bbsWh06yarF\/XcKSWn5FMPZ5xbIvXqZa6x1hh392eoc=",
       "Microsoft.Extensions.DependencyInjection.Abstractions.dll": "sha256-ycn\/UHLnjC77BNvsurP4mkuYP8oud1oVyfSSlZKMymc=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-0mTVm3L07hb2T9ruRLp+9hi0\/Dvyvl3jFkgyT149RgA=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-fsx2WMOtSBAJ2IrU4hPvW5QFy\/ubuqOCyLN7zhG2vgM=",
@@ -43,7 +43,7 @@
       "System.ComponentModel.DataAnnotations.dll": "sha256-0SUCcQWzGHfcG6aXyLxaiKag9TH1oBonphJAYmaZGoM=",
       "Microsoft.AspNetCore.Components.dll": "sha256-frGTd\/pHKY90\/MumXJBc9G549bt9caoHvQYRkXRv6Wg=",
       "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-45ia6XmGIa5WI3cHUIE9KhVornlZleYW+B5FPpfD1wQ=",
-      "EasyHealth.Shared.dll": "sha256-qE+EwWvLwcZpyU1CU+hvVn6pzYYYm2l\/mcSGGpw0PHM=",
+      "EasyHealth.Shared.dll": "sha256-rTQ5LIY8dQyxX0kEQOUevSCxUw9KlPbPZKQyqkelvgg=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-ASQUNa42c4EoMZuDg22e4UjmhkRoQmCFX5M9CkWEkaM=",
       "Microsoft.Extensions.DependencyInjection.dll": "sha256-8Y81cOKaNJHZZvHu0TROikruBOenBHdE5WwI2BOkNNE=",
       "Microsoft.Extensions.Configuration.dll": "sha256-iUTfpj7A29tIp2gl2fLM+w1MwyI8XMmUV8gFe+mJBZI=",
@@ -53,8 +53,8 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-As4J4IKSKh3bNALtK4PSknM5suoP1j6I5YXiOIrIZ3U="
     },
     "pdb": {
-      "EasyHealth.Client.pdb": "sha256-Nw6PM+0vb4AdK1FL1Dj4Fp21UNj7kGNNoimu5HcI7yA=",
-      "EasyHealth.Shared.pdb": "sha256-3osQhb7A\/fpy9rM9LcgPf\/8KLXtOgJVLPPAp6hyp\/y4="
+      "EasyHealth.Client.pdb": "sha256-0dOpbmktbcoUkmBMB1ORFMRr5mIggO4iX9SDfS3\/x3E=",
+      "EasyHealth.Shared.pdb": "sha256-+nOXorx7+8flMfHUN4TN8fsnebAfgb2WFdhvidXnHoQ="
     },
     "runtime": {
       "dotnet.3.2.0-preview2.20159.2.js": "sha256-80Q7rIpqLxXzuMWqtC+FCBNrG15kR\/r+ba08n2TpQO0=",

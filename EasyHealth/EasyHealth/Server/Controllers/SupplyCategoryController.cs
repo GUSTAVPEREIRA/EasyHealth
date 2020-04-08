@@ -24,7 +24,7 @@
         {
             var queryable = this._context.SupplyCategories.AsQueryable();
             await HttpContext.InsertParameterInPageResponse(queryable, pagination.Amount);
-            return await this._context.SupplyCategories.ToListAsync();
+            return await queryable.Pagination(pagination).ToListAsync();
         }
 
         [HttpPost("Add", Name = "AddSupplyCategory")]

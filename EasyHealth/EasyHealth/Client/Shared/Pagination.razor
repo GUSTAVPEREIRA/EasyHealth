@@ -1,0 +1,112 @@
+﻿<nav aria-label="Pagination">
+    <ul class="pagination justify-content-center">
+        @foreach (var link in links)
+        {
+            <li @onclick="@(() => SelectedPageLink(link))" class="page-item @(link.Enable ? null : "disabled") 
+                @(link.Active ? "active" : null)" style="cursor:pointer">
+                <span class="page-link" href="#">@link.Text</span>
+            </li>
+        }
+
+    </ul>
+</nav>
+
+
+@code {
+    [Parameter] public int CurrentPage { get; set; } = 1;
+    [Parameter] public int TotalAmountPages { get; set; }
+    [Parameter] public int Range { get; set; } = 3;
+    [Parameter] public EventCallback<int> SelectedPage { get; set; }
+
+    List<LinkModel> links;
+
+
+    private async Task SelectedPageLink(LinkModel linkModel)
+    {
+        if (linkModel.Page == CurrentPage)
+        {
+            return;
+        }
+
+        if (!linkModel.Enable)
+        {
+            return;
+        }
+
+        CurrentPage = linkModel.Page;
+        await SelectedPage.InvokeAsync(linkModel.Page);
+    }
+
+    class LinkModel
+    {
+        public LinkModel(int page) : this(page, true)
+        {
+
+        }
+
+        public LinkModel(int page, bool enable) : this(page, enable, page.ToString())
+        {
+
+        }
+
+        public LinkModel(int page, bool enable, string text)
+        {
+            this.Page = page;
+            this.Enable = enable;
+            this.Text = text;
+        }
+
+        public string Text { get; set; }
+        public int Page { get; set; }
+        public bool Enable { get; set; }
+        public bool Active { get; set; }
+    }
+
+    protected override void OnParametersSet()
+    {
+        LoadingPages();
+    }
+
+    private void LoadingPages()
+    {
+        links = new List<LinkModel>();
+
+        //Aqui estou tratando o link da página anterior
+        var isPreviousPageLinkEnable = CurrentPage != 1;
+
+        if (TotalAmountPages == 1)
+        {
+            isPreviousPageLinkEnable = false;
+        }
+
+        var previousPage = CurrentPage - 1;
+
+        links.Add(new LinkModel(previousPage, isPreviousPageLinkEnable, "Anterior"));
+
+        //Aqui trato o link de todas as páginas exceto a anterior e a última página
+
+        for (int x = 1; x <= TotalAmountPages; x++)
+        {
+            //Vejo se a página está dentro do raio
+            if (x >= CurrentPage - Range && x <= CurrentPage + Range)
+            {
+                links.Add(new LinkModel(x)
+                {
+                    Active = CurrentPage == x
+                });
+            }
+        }
+
+        var isNextPageLinkEnable = CurrentPage != TotalAmountPages;
+
+        if (TotalAmountPages == 1)
+        {
+            isNextPageLinkEnable = false;
+        }
+
+        //Aqui estou tratando o link da última página
+        var nextPage = CurrentPage + 1;
+        links.Add(new LinkModel(nextPage, isNextPageLinkEnable, "Próximo"));
+
+    }
+}

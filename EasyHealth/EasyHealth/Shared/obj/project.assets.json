@@ -7029,11 +7029,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Entity\\Entityp1\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj",
       "projectName": "EasyHealth.Shared",
-      "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Entity\\Entityp1\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj",
+      "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj",
       "packagesPath": "C:\\Users\\gugup\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Entity\\Entityp1\\EasyHealth\\EasyHealth\\Shared\\obj\\",
+      "outputPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gugup\\AppData\\Roaming\\NuGet\\NuGet.Config",

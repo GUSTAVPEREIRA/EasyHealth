@@ -8748,11 +8748,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Entity\\Entityp1\\EasyHealth\\EasyHealth\\Server\\EasyHealth.Server.csproj",
+      "projectUniqueName": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Server\\EasyHealth.Server.csproj",
       "projectName": "EasyHealth.Server",
-      "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Entity\\Entityp1\\EasyHealth\\EasyHealth\\Server\\EasyHealth.Server.csproj",
+      "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Server\\EasyHealth.Server.csproj",
       "packagesPath": "C:\\Users\\gugup\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Entity\\Entityp1\\EasyHealth\\EasyHealth\\Server\\obj\\",
+      "outputPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gugup\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8768,11 +8768,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Entity\\Entityp1\\EasyHealth\\EasyHealth\\Client\\EasyHealth.Client.csproj": {
-              "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Entity\\Entityp1\\EasyHealth\\EasyHealth\\Client\\EasyHealth.Client.csproj"
+            "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Client\\EasyHealth.Client.csproj": {
+              "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Client\\EasyHealth.Client.csproj"
             },
-            "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Entity\\Entityp1\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj": {
-              "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Entity\\Entityp1\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj"
+            "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj": {
+              "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj"
             }
           }
         }
