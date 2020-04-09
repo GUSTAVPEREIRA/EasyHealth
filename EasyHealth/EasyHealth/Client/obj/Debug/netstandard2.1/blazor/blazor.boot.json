@@ -5,7 +5,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "EasyHealth.Client.dll": "sha256-VTCB5RHdfmag6b3gN4eZrjvWqC7K33w2eUvaogPELFg=",
+      "EasyHealth.Client.dll": "sha256-FedICdGbTqBoptFJ0gSsZIXN9ciRqATvPG6+r3On+Iw=",
       "System.Text.Json.dll": "sha256-pzCorxTCjbUODF5JuRgcHc8gVYEdSaKD9NWA6wZhTPE=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-jSbbdZ+4PD2T6Vi89+Tvmvg3VxTKeCToquIW6x+iTBM=",
       "mscorlib.dll": "sha256-Gqei7bi4XYsHg8yfeIwq9YZf9lFBg0tbqiF7Y4Ep2fU=",
@@ -53,7 +53,7 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-As4J4IKSKh3bNALtK4PSknM5suoP1j6I5YXiOIrIZ3U="
     },
     "pdb": {
-      "EasyHealth.Client.pdb": "sha256-N\/Xu4sBPYS3I26QUgkFWgHAAJgPOPrAFB3ZLHUuyjcE=",
+      "EasyHealth.Client.pdb": "sha256-FlizwoEgYwzbqU++BwAmBYUki+grXDnPpMwq\/2Gy7uQ=",
       "EasyHealth.Shared.pdb": "sha256-+nOXorx7+8flMfHUN4TN8fsnebAfgb2WFdhvidXnHoQ="
     },
     "runtime": {

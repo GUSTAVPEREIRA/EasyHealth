@@ -1,5 +1,8 @@
 ﻿
-<a class="btn btn-primary text-white buttons-border-radius @Css" href="@Url" @onclick="OnClick">@Name <span class="icon-margin @Icon"></span></a>
+<a class="btn btn-primary text-white buttons-border-radius @Css" href="@Url" @onclick="OnClick" tabindex="@TabIndex">
+    @Name 
+    <span class="icon-margin @Icon"/>
+</a>
 
 @code {
     [Parameter] public string Name { get; set; } = "";
@@ -7,4 +10,5 @@
     [Parameter] public string Url { get; set; }
     [Parameter] public EventCallback OnClick { get; set; }
     [Parameter] public string Css { get; set; } = "";
+    [Parameter] public int TabIndex { get; set; }
 }

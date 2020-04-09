@@ -13,7 +13,7 @@
             <InputText @bind-Value="@supplyCategory.Description" id="Description" class="form-control" />
             <ValidationMessage For="@(() => supplyCategory.Description)" />
         </div>
-    </div>
+    </div>    
     <button class="btn btn-success" type="submit">@ButtonTextSubmit</button>
     <button class="btn btn-danger" @onclick="@(() =>  navigator.NavigateTo("/SupplyCategory"))">@ButtonTextCancel</button>
 </EditForm>

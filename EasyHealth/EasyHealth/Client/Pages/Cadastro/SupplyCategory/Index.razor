@@ -4,9 +4,19 @@
 
 <h3>Categoria de insumos</h3>
 
-<div>
-    <AddButton Icon="fas fa-plus" Name="Adicionar" Url="SupplyCategory/Create" Css="mb-2"/>    
+<div class="mb-2 row">
+    <div>
+        <AddButton Icon="fas fa-plus" Name="Adicionar" Url="SupplyCategory/Create" TabIndex="1"/>
+    </div>
+    <div class="form-inline col-md-10">
+        <label class="sr-only" for="filter-name">Filtro</label>
+        <input type="text" name="filter-name" class="form-control mb-2 mr-sm-2 col-md-9"
+               @bind="FilterName" placeholder="Filtrar Pelo nome" tabindex="2"/>
+        <EditButton Name="Filtrar" OnClick="Filter" Css="mr-sm-2 mb-2" Icon="fas fa-search" TabIndex="3"/>        
+        <DeleteButton Name="Limpar" OnClick="FilterClean" Css="mb-2" Icon="fas fa-eraser" TabIndex="4"/>        
+    </div>
 </div>
+
 
 @if (SupplyCategories == null)
 {
@@ -54,12 +64,26 @@ else
 
 
 @code {
-List<SupplyCategory> SupplyCategories { get; set; }
+    List<SupplyCategory> SupplyCategories { get; set; }
     ConfirmationForm Confirmation;
     int SupplyCategoryId;
     public int TotalAmountPages { get; set; }
     public int CurrentPage { get; set; }
     public int TotalAmountItems { get; set; }
+    public string FilterName { get; set; } = string.Empty;
+
+    private async Task Filter()
+    {
+        CurrentPage = 1;
+        await LoadSupplyCategories();
+    }
+
+    private async Task FilterClean()
+    {
+        FilterName = string.Empty;
+        CurrentPage = 1;
+        await LoadSupplyCategories();
+    }
 
     private async Task SelectedPage(int page)
     {
@@ -74,7 +98,7 @@ List<SupplyCategory> SupplyCategories { get; set; }
 
     async Task LoadSupplyCategories(int page = 1, int amountPerPage = 5)
     {
-        var httpResponse = await http.GetAsync($"/api/supplyCategory/Get?page={page}&amountPerPage={amountPerPage}");
+        var httpResponse = await http.GetAsync($"/api/supplyCategory/Get?page={page}&amountPerPage={amountPerPage}&name={FilterName}");
 
         if (httpResponse.IsSuccessStatusCode)
         {

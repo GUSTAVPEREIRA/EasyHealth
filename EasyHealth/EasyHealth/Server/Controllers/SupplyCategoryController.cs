@@ -7,6 +7,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using EasyHealth.Shared.Utils;
+    using System.Linq;
 
     [Route("api/[controller]")]
     [ApiController]
@@ -20,9 +21,16 @@
         }
 
         [HttpGet("Get", Name = "GetSupplyCategories")]
-        public async Task<ActionResult<List<SupplyCategory>>> GetSupplyCategory([FromQuery] Pagination pagination)
+        public async Task<ActionResult<List<SupplyCategory>>> GetSupplyCategory([FromQuery] Pagination pagination, 
+            [FromQuery] string name)
         {
             var queryable = this._context.SupplyCategories.AsQueryable();
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                queryable = queryable.Where(w => w.Name.Contains(name));
+            }
+
             await HttpContext.InsertParameterInPageResponse(queryable, pagination.Amount);
             return await queryable.Pagination(pagination).ToListAsync();
         }
