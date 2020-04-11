@@ -4,15 +4,12 @@
 
 <SupplyCategoryForm supplyCategory="@supplyCategory" OnValidSubmit="@UpdateSupplyCategory"
                     ButtonTextCancel="Cancelar" ButtonTextSubmit="Atualizar">
-
 </SupplyCategoryForm>
-
 
 @code {
     [Parameter]
     public int supplyCategoryId { get; set; }
     public SupplyCategory supplyCategory { get; set; } = new SupplyCategory();
-
 
     protected async override Task OnParametersSetAsync()
     {

@@ -146,9 +146,9 @@ C:\Users\gugup\OneDrive\Área de Trabalho\C#\Entity\Entityp1\EasyHealth\EasyHeal
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Entity\Entityp1\EasyHealth\EasyHealth\Server\obj\Debug\netcoreapp3.1\EasyHealth.Server.csproj.CoreCompileInputs.cache
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Entity\Entityp1\EasyHealth\EasyHealth\Server\obj\Debug\netcoreapp3.1\EasyHealth.Server.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Server\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Server\bin\Debug\netcoreapp3.1\EasyHealth.Client.StaticWebAssets.xml
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Server\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Server\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Server\bin\Debug\netcoreapp3.1\EasyHealth.Client.StaticWebAssets.xml
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Server\bin\Debug\netcoreapp3.1\EasyHealth.Server.StaticWebAssets.xml
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Server\bin\Debug\netcoreapp3.1\EasyHealth.Server.exe
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Server\bin\Debug\netcoreapp3.1\EasyHealth.Server.deps.json

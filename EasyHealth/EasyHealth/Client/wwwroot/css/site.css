@@ -8,6 +8,10 @@ a, .btn-link {
     color: #0366d6;
 }
 
+.list-style-none {
+    list-style-type: none;
+}
+
 .icon-margin {
     width: 1.0rem;
     font-size: 1.0rem;
@@ -193,6 +197,24 @@ app {
     }
 }
 
-.link-without-underline {
-    text-decoration: none;
+a:link {
+    text-decoration: none
+}
+
+a:visited {
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.list-group-item-primary-custom {
+    background-color: #1E90FF;
+}
+
+.btn-primary-custom {
+    color:#FFF;
+    background-color: #1E90FF;
+    border-color: #1E90FF;
 }

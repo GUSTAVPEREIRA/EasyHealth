@@ -7,23 +7,26 @@ namespace EasyHealth.Server
     using Microsoft.Extensions.Hosting;
     using Microsoft.EntityFrameworkCore;
     using System;
+    using EasyHealth.Server.Repositories;
 
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+        public RegisterService RegisterService { get; set; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-       
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("Default");
+            RegisterService = new RegisterService(ref services);
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
             services.AddControllersWithViews();
         }
-        
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
@@ -33,7 +36,7 @@ namespace EasyHealth.Server
             }
             else
             {
-                app.UseExceptionHandler("/Error");                
+                app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
 

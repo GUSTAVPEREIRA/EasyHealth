@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EasyHealth.Shared.Model;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
-namespace EasyHealth.Server.Controllers
+﻿namespace EasyHealth.Server.Controllers
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+    using EasyHealth.Shared.Model;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase

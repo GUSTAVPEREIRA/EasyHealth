@@ -7,63 +7,52 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using EasyHealth.Shared.Utils;
-    using System.Linq;
+    using EasyHealth.Server.Repositories.IServices;
 
     [Route("api/[controller]")]
     [ApiController]
     public class SupplyCategoryController : ControllerBase
     {
-        private readonly ApplicationContext _context;
+        private readonly IServiceSupplyCategory _serviceSupplyCategory;
 
-        public SupplyCategoryController(ApplicationContext applicationContext)
+        public SupplyCategoryController(IServiceSupplyCategory serviceSupplyCategory)
         {
-            this._context = applicationContext;
+            this._serviceSupplyCategory = serviceSupplyCategory;
         }
 
         [HttpGet("Get", Name = "GetSupplyCategories")]
-        public async Task<ActionResult<List<SupplyCategory>>> GetSupplyCategory([FromQuery] Pagination pagination, 
+        public async Task<ActionResult<List<SupplyCategory>>> GetSupplyCategory([FromQuery] Pagination pagination,
             [FromQuery] string name)
         {
-            var queryable = this._context.SupplyCategories.AsQueryable();
-
-            if (!string.IsNullOrEmpty(name))
-            {
-                queryable = queryable.Where(w => w.Name.Contains(name));
-            }
-
+            var queryable = this._serviceSupplyCategory.GetSupplyCategories(name);
             await HttpContext.InsertParameterInPageResponse(queryable, pagination.Amount);
             return await queryable.Pagination(pagination).ToListAsync();
         }
 
         [HttpPost("Add", Name = "AddSupplyCategory")]
-        public async Task<ActionResult<SupplyCategory>> CreateSupplyCategory(SupplyCategory supplyCategory)
+        public ActionResult<SupplyCategory> CreateSupplyCategory(SupplyCategory supplyCategory)
         {
-            this._context.SupplyCategories.Add(supplyCategory);
-            await this._context.SaveChangesAsync();
+            this._serviceSupplyCategory.CreateSupplyCategory(ref supplyCategory);
             return new CreatedAtRouteResult("GetSupplyCategory", new { id = supplyCategory.Id }, supplyCategory);
-
         }
 
         [HttpGet("Get/{id}", Name = "GetSupplyCategory")]
-        public async Task<ActionResult<SupplyCategory>> GetSupplyCategory(int id)
+        public ActionResult<SupplyCategory> GetSupplyCategory(int id)
         {
-            return await this._context.SupplyCategories.FirstOrDefaultAsync(f => f.Id == id);
+            return this._serviceSupplyCategory.GetSupplyCategory(id);
         }
 
         [HttpPut("Update", Name = "UpdateSupplyCategory")]
-        public async Task<ActionResult<SupplyCategory>> UpdateSupplyCategory(SupplyCategory supplyCategory)
+        public ActionResult<SupplyCategory> UpdateSupplyCategory(SupplyCategory supplyCategory)
         {
-            this._context.Entry(supplyCategory).State = EntityState.Modified;
-            await this._context.SaveChangesAsync();
+            this._serviceSupplyCategory.UpdateSupplyCategory(ref supplyCategory);
             return Ok(supplyCategory);
         }
 
         [HttpDelete("Delete/{id}", Name = "DeleteSupplyCategory")]
-        public async Task DeleteSupplyCategory(int id)
+        public void DeleteSupplyCategory(int id)
         {
-            SupplyCategory supplyCategory = await this._context.SupplyCategories.FirstOrDefaultAsync(w => w.Id == id);
-            this._context.SupplyCategories.Remove(supplyCategory);
-            await this._context.SaveChangesAsync();
+            this._serviceSupplyCategory.DeleteSupplyCategory(id);
         }
 
     }

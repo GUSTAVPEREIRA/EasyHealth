@@ -14,7 +14,7 @@
             <ValidationMessage For="@(() => supplyCategory.Description)" />
         </div>
     </div>    
-    <button class="btn btn-success" type="submit">@ButtonTextSubmit</button>
+    <button class="btn btn-success" type="submit" @onclick:stopPropagation>@ButtonTextSubmit</button>
     <button class="btn btn-danger" @onclick="@(() =>  navigator.NavigateTo("/SupplyCategory"))">@ButtonTextCancel</button>
 </EditForm>
 
