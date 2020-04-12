@@ -4,6 +4,7 @@
     using System.Linq;
     using EasyHealth.Server.Repositories.IServices;
     using Microsoft.EntityFrameworkCore;
+    using System;
 
     public class ServiceSupplyCategory : IServiceSupplyCategory
     {
@@ -48,6 +49,7 @@
         public SupplyCategory UpdateSupplyCategory(ref SupplyCategory supplyCategory)
         {
             this._context.Entry(supplyCategory).State = EntityState.Modified;
+            this._context.Entry(supplyCategory).Property("LastUpdate").CurrentValue = DateTime.Now;
             this._context.SaveChangesAsync();
 
             return supplyCategory;

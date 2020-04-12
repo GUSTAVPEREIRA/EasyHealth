@@ -2,6 +2,7 @@
 {
     using EasyHealth.Shared.Model;
     using Microsoft.EntityFrameworkCore;
+    using System;
 
     public class ApplicationContext : DbContext
     {
@@ -20,6 +21,11 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<SupplyCategory>().Property<DateTime>("LastUpdate")
+                .HasColumnType("datetime").HasDefaultValueSql("getdate()").IsRequired();
+            modelBuilder.Entity<HospitalSupply>().Property<DateTime>("LastUpdate")
+                .HasColumnType("datetime").HasDefaultValueSql("getdate()").IsRequired();
+
             base.OnModelCreating(modelBuilder);
         }
     }
