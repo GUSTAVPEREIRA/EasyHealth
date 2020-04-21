@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Blazored.LocalStorage/2.1.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.1.2",
+          "Microsoft.AspNetCore.Components.Web": "3.1.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Blazored.LocalStorage.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Blazored.LocalStorage.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/3.1.2": {
         "type": "package",
         "dependencies": {
@@ -142,6 +155,19 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {}
         }
       },
+      "Microsoft.AspNetCore.JsonPatch/3.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Metadata/3.1.2": {
         "type": "package",
         "compile": {
@@ -150,6 +176,23 @@
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Metadata.dll": {}
         }
+      },
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.JsonPatch": "3.1.3",
+          "Newtonsoft.Json": "12.0.2",
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Microsoft.AspNetCore.Razor/2.2.0": {
         "type": "package",
@@ -994,6 +1037,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "NuGet.Frameworks/4.7.0": {
@@ -2718,6 +2773,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
+          "Blazored.LocalStorage": "2.1.5",
           "EasyHealth.Shared": "1.0.0",
           "Microsoft.AspNetCore.Blazor.HttpClient": "3.2.0-preview2.20160.5",
           "Microsoft.AspNetCore.Components.WebAssembly": "3.2.0-preview2.20160.5",
@@ -2752,6 +2808,18 @@
     }
   },
   "libraries": {
+    "Blazored.LocalStorage/2.1.5": {
+      "sha512": "/gqhAXbGOwgom2R/oh4YCh2QOR6Sf0JIHBvNShWiSfvaFjJYCGJgM4onj/Upt/a8q9SBdq4R0zglNH9MM7nqlQ==",
+      "type": "package",
+      "path": "blazored.localstorage/2.1.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazored.localstorage.2.1.5.nupkg.sha512",
+        "blazored.localstorage.nuspec",
+        "lib/netstandard2.0/Blazored.LocalStorage.dll"
+      ]
+    },
     "Microsoft.AspNetCore.Authorization/3.1.2": {
       "sha512": "bbu9qMsOdmNjLLaRawhT3OfjFHleK9D2ICGfmjvkMVNyfx42P5NgypOlqKgK6SDoqtex3DisWd4E3nePtohPCw==",
       "type": "package",
@@ -2915,6 +2983,20 @@
         "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
+    "Microsoft.AspNetCore.JsonPatch/3.1.3": {
+      "sha512": "03Z8sRA1Rxu7X2CRz6aPZkrbEX9IzD7wb/+yF1LU0U/g0hLWi7ynGovIe2aeHhk7Gsznwr3AAP2D9s5SO7v5KQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.jsonpatch/3.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.xml",
+        "microsoft.aspnetcore.jsonpatch.3.1.3.nupkg.sha512",
+        "microsoft.aspnetcore.jsonpatch.nuspec"
+      ]
+    },
     "Microsoft.AspNetCore.Metadata/3.1.2": {
       "sha512": "4ML2fUxRyfrpXnAppHi8c7MDiTOr9yJ5/Sp6p8XktVw8H5CJJSs6KesM/mc9vREpg6FgC8EvgDRNKom6PLPcjQ==",
       "type": "package",
@@ -2929,6 +3011,20 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.xml",
         "microsoft.aspnetcore.metadata.3.1.2.nupkg.sha512",
         "microsoft.aspnetcore.metadata.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.3": {
+      "sha512": "71aKJMt9u1WE3/ji17FaIF/RgxZkL3mE7Rf27e08wpg25xWDKo2fvJLHu9R3niYnLgxyCqE7AKgm5FqG2WVGcA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.mvc.newtonsoftjson/3.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.xml",
+        "microsoft.aspnetcore.mvc.newtonsoftjson.3.1.3.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.newtonsoftjson.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Razor/2.2.0": {
@@ -4287,6 +4383,27 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.12.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "sha512": "QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "type": "package",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net45/Newtonsoft.Json.Bson.dll",
+        "lib/net45/Newtonsoft.Json.Bson.pdb",
+        "lib/net45/Newtonsoft.Json.Bson.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.pdb",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.pdb",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.xml",
+        "newtonsoft.json.bson.1.0.2.nupkg.sha512",
+        "newtonsoft.json.bson.nuspec"
       ]
     },
     "NuGet.Frameworks/4.7.0": {
@@ -8739,6 +8856,7 @@
       "EasyHealth.Client >= 1.0.0",
       "EasyHealth.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 3.2.0-preview2.20160.5",
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.3",
       "Microsoft.EntityFrameworkCore >= 3.1.3",
       "Microsoft.EntityFrameworkCore.InMemory >= 3.1.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.3",
@@ -8752,11 +8870,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Server\\EasyHealth.Server.csproj",
+      "projectUniqueName": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\Server\\EasyHealth.Server.csproj",
       "projectName": "EasyHealth.Server",
-      "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Server\\EasyHealth.Server.csproj",
+      "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\Server\\EasyHealth.Server.csproj",
       "packagesPath": "C:\\Users\\gugup\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Server\\obj\\",
+      "outputPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gugup\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8772,11 +8890,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Client\\EasyHealth.Client.csproj": {
-              "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Client\\EasyHealth.Client.csproj"
+            "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\Client\\EasyHealth.Client.csproj": {
+              "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\Client\\EasyHealth.Client.csproj"
             },
-            "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj": {
-              "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj"
+            "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj": {
+              "projectPath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj"
             }
           }
         }
@@ -8793,6 +8911,10 @@
           "Microsoft.AspNetCore.Components.WebAssembly.Server": {
             "target": "Package",
             "version": "[3.2.0-preview2.20160.5, )"
+          },
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+            "target": "Package",
+            "version": "[3.1.3, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",

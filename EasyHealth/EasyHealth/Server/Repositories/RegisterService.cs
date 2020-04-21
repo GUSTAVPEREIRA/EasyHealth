@@ -7,6 +7,7 @@
         public RegisterService(ref IServiceCollection services)
         {
             services.AddScoped<IServices.IServiceSupplyCategory, Services.ServiceSupplyCategory>();
+            services.AddScoped<IServices.IServiceHospitalSupply, Services.ServiceHospitalSupply>();
         }
     }
 }

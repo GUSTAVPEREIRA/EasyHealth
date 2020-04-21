@@ -1,30 +1,107 @@
 ﻿@page "/CadastroGeral"
+@inject Blazored.LocalStorage.ILocalStorageService localStore
 <h1 class="text-center">Cadastro Geral</h1>
 <div class="row">
     <div class="col-md-4">
         <ul class="list-group-item list-group-flush mt-2 p-0">
-            <li class="list-group-item list-group-item-primary-custom text-white mb-2">Hospital</li>
-            <li class="list-group ml-2 mb-1">
-                <a href="#" class="link-without-underline text-dark">Insumo hospitalar</a>
+            <li class="d-flex list-group-item list-group-item-primary-custom text-white mb-2" @onclick="HospitalHide">
+                Hospital
+                @if (!HospitalMenu)
+                {
+                    <span class="ml-auto align-self-center fas fa-minus"></span>
+                }
+                else
+                {
+                    <span class="ml-auto align-self-center fas fa-plus"></span>
+                }
             </li>
-            <li class="list-group ml-2 mb-1">
-                <a href="SupplyCategory" class="link-without-underline text-dark">Categoria de insumo hospitalar</a>
-            </li>
+            @if (!HospitalMenu)
+            {
+                <li class="list-group ml-2 mb-1">
+                    <a href="HospitalSupply" class="link-without-underline text-dark">
+                        Insumo hospitalar
+                    </a>
+                </li>
+                <li class="list-group ml-2 mb-1">
+                    <a href="SupplyCategory" class="link-without-underline text-dark">Categoria de insumo hospitalar</a>
+                </li>
+            }
         </ul>
     </div>
     <div class="col-md-4">
         <ul class="list-group-item list-group-flush mt-2 p-0">
-            <li class="list-group-item list-group-item-primary-custom text-white mb-2">Tecnologia</li>
-            <li class="list-group ml-2 mb-1">
+            <li class="d-flex list-group-item list-group-item-primary-custom text-white mb-2" @onclick="TechnologyHide">
+                Tecnologia
+                @if (!TechnologyMenu)
+                {
+                    <span class="ml-auto align-self-center fas fa-minus"></span>
+                }
+                else
+                {
+                    <span class="ml-auto align-self-center fas fa-plus"></span>
+                }
             </li>
+            @if (!TechnologyMenu)
+            {
+                <li class="list-group ml-2 mb-1"></li>
+            }
         </ul>
     </div>
     <div class="col-md-4">
         <ul class="list-group-item list-group-flush mt-2 p-0">
-            <li class="list-group-item list-group-item-primary-custom text-white mb-2">Farmácia</li>
-            <li class="list-group ml-2 mb-1">
+            <li class="d-flex list-group-item list-group-item-primary-custom text-white mb-2" @onclick="PharmacyMenuHide">
+                Farmácia
+                @if (!PharmacyMenu)
+                {
+                    <span class="ml-auto align-self-center fas fa-minus"></span>
+                }
+                else
+                {
+                    <span class="ml-auto align-self-center fas fa-plus"></span>
+                }
             </li>
+            @if (!PharmacyMenu)
+            {
+                <li class="list-group ml-2 mb-1"></li>
+            }
         </ul>
     </div>
 </div>
 
+@code {
+    public bool HospitalMenu { get; set; } = true;
+    public bool TechnologyMenu { get; set; } = true;
+    public bool PharmacyMenu { get; set; } = true;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        HospitalMenu = localStore.GetItemAsync<bool>("hospital") != null ?
+            await localStore.GetItemAsync<bool>("hospital") : true;
+
+        TechnologyMenu = localStore.GetItemAsync<bool>("technology") != null
+            ? await localStore.GetItemAsync<bool>("technology") : true;
+
+        PharmacyMenu = localStore.GetItemAsync<bool>("pharmacy") != null
+            ? await localStore.GetItemAsync<bool>("pharmacy") : true;
+    }
+
+    public async void HospitalHide()
+    {
+        HospitalMenu = !HospitalMenu;
+        await localStore.SetItemAsync("hospital", HospitalMenu);
+    }
+
+    public async void TechnologyHide()
+    {
+        TechnologyMenu = !TechnologyMenu;
+        await localStore.SetItemAsync("technology", TechnologyMenu);
+    }
+
+    public async void PharmacyMenuHide()
+    {
+        PharmacyMenu = !PharmacyMenu;
+        await localStore.SetItemAsync("pharmacy", PharmacyMenu);
+    }
+}

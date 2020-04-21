@@ -1,13 +1,13 @@
 ﻿<EditForm Model="@supplyCategory" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator />    
-    <div class="form-group">
+    <div class="form-group col-md-10 p-0">
         <label for="Name">Nome<span class="text-danger">*</span></label>
         <div>
             <InputText @bind-Value="@supplyCategory.Name" id="Name" class="form-control" />
             <ValidationMessage For="@(() => supplyCategory.Name)" />
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group col-md-10 p-0">
         <label for="Description">Descrição<span class="text-danger">*</span></label>
         <div>
             <InputText @bind-Value="@supplyCategory.Description" id="Description" class="form-control" />

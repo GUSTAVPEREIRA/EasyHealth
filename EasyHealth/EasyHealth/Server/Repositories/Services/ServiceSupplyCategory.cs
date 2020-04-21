@@ -5,6 +5,7 @@
     using EasyHealth.Server.Repositories.IServices;
     using Microsoft.EntityFrameworkCore;
     using System;
+    using System.Collections.Generic;
 
     public class ServiceSupplyCategory : IServiceSupplyCategory
     {
@@ -28,6 +29,13 @@
             this._context.SupplyCategories.Remove(supplyCategory);
             this._context.SaveChangesAsync();
         }
+
+        public List<SupplyCategory> GetAllSupplyCategories()
+        {
+            var result = this._context.SupplyCategories.AsNoTracking().ToList();
+            return result;
+        }
+
 
         public IQueryable<SupplyCategory> GetSupplyCategories(string name = "")
         {

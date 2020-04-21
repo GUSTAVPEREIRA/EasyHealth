@@ -29,6 +29,13 @@
             return await queryable.Pagination(pagination).ToListAsync();
         }
 
+        [HttpGet("GetAll", Name = "GetAllSupplyCategories")]
+        public ActionResult<List<SupplyCategory>> GetAllSupplyCategory()
+        {
+            var queryable = this._serviceSupplyCategory.GetAllSupplyCategories();
+            return queryable;
+        }
+
         [HttpPost("Add", Name = "AddSupplyCategory")]
         public ActionResult<SupplyCategory> CreateSupplyCategory(SupplyCategory supplyCategory)
         {

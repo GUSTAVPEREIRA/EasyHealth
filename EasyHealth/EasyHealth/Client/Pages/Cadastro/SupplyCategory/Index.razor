@@ -96,6 +96,12 @@ else
 
     async Task LoadSupplyCategories(int page = 1, int amountPerPage = 5)
     {
+
+        if (page <= 0)
+        {
+            page = 1;
+        }
+
         var httpResponse = await http.GetAsync($"/api/supplyCategory/Get?page={page}&amountPerPage={amountPerPage}&name={FilterName}");
 
         if (httpResponse.IsSuccessStatusCode)
@@ -142,7 +148,7 @@ else
     {
         Confirmation.Hide();
         SupplyCategoryId = 0;
-    }    
+    }
 
     private async Task FilterKeyPress(KeyboardEventArgs e)
     {

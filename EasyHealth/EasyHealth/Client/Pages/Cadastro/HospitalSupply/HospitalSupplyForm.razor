@@ -1,0 +1,72 @@
+﻿
+<EditForm Model="@hospitalSupply" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-group col-md-10 p-0">
+        <label for="Name">Nome<span class="text-danger">*</span></label>
+        <div>
+            <InputText @bind-Value="@hospitalSupply.Name" id="Name" class="form-control" />
+            <ValidationMessage For="@(() => hospitalSupply.Name)" />
+        </div>
+    </div>
+    <div class="form-group col-md-6 p-0">
+        <label for="Description">Descrição<span class="text-danger">*</span></label>
+        <div>
+            <select @bind="@hospitalSupply.SupplyCategoryId" class="form-control">
+
+                <option value="" selected="@(this._selected == false ? "selected" : "")">Selecione uma categoria...</option>
+
+                @foreach (var supplyCategory in SupplyCategories)
+                {
+                    if (hospitalSupply.SupplyCategory != null && hospitalSupply.SupplyCategory.Id == supplyCategory.Id)
+                    {
+                        <option value="@supplyCategory.Id" selected="selected">@supplyCategory.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@supplyCategory.Id">@supplyCategory.Name</option>
+                    }
+                }
+            </select>
+            <ValidationMessage For="@(() => hospitalSupply.SupplyCategoryId)" />
+        </div>
+    </div>
+    <button class="btn btn-success" type="submit" @onclick:stopPropagation>@ButtonTextSubmit</button>
+    <button class="btn btn-danger" @onclick="@(() =>  navigator.NavigateTo("/HospitalSupply"))">@ButtonTextCancel</button>
+</EditForm>
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (hospitalSupply == null)
+        {
+            this.hospitalSupply = new HospitalSupply();
+            this._selected = false;
+        }
+        else
+        {
+            this._selected = this.hospitalSupply.SupplyCategory != null ? true : false;
+        }
+    }
+
+    private bool _selected { get; set; }
+
+    [Inject]
+    public NavigationManager navigator { get; set; }
+
+    [Parameter]
+    public HospitalSupply hospitalSupply { get; set; }
+
+    [Parameter]
+    public string ButtonTextSubmit { get; set; } = "Salvar";
+
+    [Parameter]
+    public string ButtonTextCancel { get; set; } = "Cancelar";
+
+    [Parameter]
+    public EventCallback OnValidSubmit { get; set; }
+
+    [Parameter]
+    public List<SupplyCategory> SupplyCategories { get; set; } = new List<SupplyCategory>();
+
+}

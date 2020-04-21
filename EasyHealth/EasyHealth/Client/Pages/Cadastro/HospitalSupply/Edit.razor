@@ -1,0 +1,43 @@
+﻿@page "/HospitalSupply/Edit/{hospitalSupplyId:int}"
+
+@inject HttpClient http
+@inject NavigationManager navigator
+@using System.Text.Json
+
+<HospitalSupplyForm hospitalSupply="@HospitalSupply" OnValidSubmit="@UpdateHospitalSupply"
+                    ButtonTextCancel="Cancelar" ButtonTextSubmit="Atualizar" SupplyCategories="SupplyCategories">
+</HospitalSupplyForm>
+
+@code {
+    [Parameter]
+    public int HospitalSupplyId { get; set; }
+    public HospitalSupply HospitalSupply { get; set; } = new HospitalSupply();
+    public List<SupplyCategory> SupplyCategories { get; set; } = new List<SupplyCategory>();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        HospitalSupply = await http.GetJsonAsync<HospitalSupply>($"/api/HospitalSupply/Get/{HospitalSupplyId}");
+    }
+
+    async Task UpdateHospitalSupply()
+    {
+        HospitalSupply = await http.PutJsonAsync<HospitalSupply>($"/api/HospitalSupply/Update", HospitalSupply);
+        navigator.NavigateTo("/HospitalSupply");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadSupplyCategories();
+    }
+
+    async Task LoadSupplyCategories()
+    {
+        var httpResponse = await http.GetAsync($"/api/SupplyCategory/GetAll");
+        var responseString = await httpResponse.Content.ReadAsStringAsync();
+        SupplyCategories = JsonSerializer.Deserialize<List<SupplyCategory>>(responseString, new JsonSerializerOptions()
+        {
+            PropertyNameCaseInsensitive = true
+        });
+    }
+
+}

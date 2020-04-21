@@ -1,0 +1,160 @@
+﻿@page "/HospitalSupply"
+@inject HttpClient http
+@using System.Text.Json
+
+<h2 class="text-center">Insumos</h2>
+
+<div class="mb-2 row container col-md-auto">
+    <div>
+        <AddButton Icon="fas fa-plus" Name="" Url="HospitalSupply/Create" TabIndex="1" />
+    </div>
+    <div class="form-inline col-md-10">
+        <label class="sr-only" for="filter-name">Filtro</label>
+        <input type="text" name="filter-name" class="form-control mb-2 mr-sm-2 col-md-9"
+               @bind="@FilterName" placeholder="Filtrar Pelo nome" tabindex="2" @onkeyup="@(e => FilterKeyPress(e))" />
+        <EditButton Name="" OnClick="@Filter" Css="mr-sm-2 mb-2" Icon="fas fa-search" TabIndex="3" />
+        <DeleteButton Name="" OnClick="FilterClean" Css="mb-2" Icon="fas fa-eraser" TabIndex="4" />
+    </div>
+</div>
+
+@if (HospitalSupply == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else if (HospitalSupply.Count == 0)
+{
+    <p><em>Não existe insumos cadastradas!</em></p>
+}
+else
+{
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th class="text-center">Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hospitalSupply in HospitalSupply)
+            {
+                <tr>
+                    <td>@hospitalSupply.Name</td>
+                    <td>@hospitalSupply.SupplyCategory.Name</td>
+                    <td class="text-center">
+                        <EditButton Icon="fas fa-edit" Name=""
+                                    Url="@("/HospitalSupply/Edit/" + hospitalSupply.Id)" Css="ml-2" />
+                        <DeleteButton Icon="fas fa-trash-alt" Name=""
+                                      OnClick="@(() => DeleteHospitalSupply(hospitalSupply.Id))" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <footer class="page-footer fixed-bottom">
+        <Pagination TotalAmountPages="@TotalAmountPages" CurrentPage="@CurrentPage" Range="3" SelectedPage="@SelectedPage" />
+    </footer>
+}
+
+<ConfirmationForm @ref="Confirmation" OnCancel="@CancelConfirm" OnConfirmation="@DeleteConfirm">
+    <div>Deseja realmente excluir este item ?</div>
+</ConfirmationForm>
+
+
+@code {
+    List<HospitalSupply> HospitalSupply { get; set; }
+    ConfirmationForm Confirmation;
+    int HospitalSupplyId;
+    public int TotalAmountPages { get; set; }
+    public int CurrentPage { get; set; }
+    public int TotalAmountItems { get; set; }
+    public string FilterName { get; set; } = string.Empty;
+
+    private async Task Filter()
+    {
+        CurrentPage = 1;
+        await LoadHospitalSupplies();
+    }
+
+    private async Task FilterClean()
+    {
+        FilterName = string.Empty;
+        CurrentPage = 1;
+        await LoadHospitalSupplies();
+    }
+
+    private async Task SelectedPage(int page)
+    {
+        CurrentPage = page;
+        await LoadHospitalSupplies(page);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadHospitalSupplies();
+    }
+
+    async Task LoadHospitalSupplies(int page = 1, int amountPerPage = 5)
+    {
+        if (page <= 0)
+        {
+            page = 1;
+        }
+
+        var httpResponse = await http.GetAsync($"/api/hospitalSupply/Get?page={page}&amountPerPage={amountPerPage}&name={FilterName}");
+
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            TotalAmountPages = int.Parse(httpResponse.Headers.GetValues("totalPages").FirstOrDefault());
+            TotalAmountItems = int.Parse(httpResponse.Headers.GetValues("totalAmount").FirstOrDefault());
+
+            if (TotalAmountItems == 0)
+            {
+                HospitalSupply = new List<HospitalSupply>();
+            }
+            else
+            {
+                if (TotalAmountPages < CurrentPage)
+                {
+                    httpResponse = await http.GetAsync($"/api/hospitalSupply/Get?page={page - 1}&amountPerPage={amountPerPage}");
+                    TotalAmountPages = int.Parse(httpResponse.Headers.GetValues("totalPages").FirstOrDefault());
+                }
+
+                var responseString = await httpResponse.Content.ReadAsStringAsync();
+
+                HospitalSupply = JsonSerializer.Deserialize<List<HospitalSupply>>(responseString, new JsonSerializerOptions()
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+            }
+        }
+    }
+
+    void DeleteHospitalSupply(int id)
+    {
+        Confirmation.Display();
+        HospitalSupplyId = id;
+    }
+
+    async Task DeleteConfirm()
+    {
+        await http.DeleteAsync($"/api/hospitalSupply/Delete/{HospitalSupplyId}");
+        await SelectedPage(CurrentPage);
+        Confirmation.Hide();
+    }
+
+    private void CancelConfirm()
+    {
+        Confirmation.Hide();
+        HospitalSupplyId = 0;
+    }
+
+    private async Task FilterKeyPress(KeyboardEventArgs e)
+    {
+        if (ConsoleKey.Enter.ToString() == e.Key)
+        {
+            await Filter();
+        }
+    }
+
+}

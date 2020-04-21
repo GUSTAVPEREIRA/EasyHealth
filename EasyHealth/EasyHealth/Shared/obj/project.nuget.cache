@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PV4Lp8t67w26ZuLcLyR1HQvR+g4grHVGFvWDJYUq+jSqArK6ZZR4i5peJakv7aS/AHTOLCr5znz+E1ZnjdqeGA==",
+  "dgSpecHash": "qPUf2ODaqX2TVNXwI4fioXezRRCHygMPOujgyYvK5p8ieX5gMiJyVj5cLRXGMR4mPGtBVC2XG3rvJTMWWcmE6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj",
+  "projectFilePath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\Shared\\EasyHealth.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gugup\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\gugup\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",

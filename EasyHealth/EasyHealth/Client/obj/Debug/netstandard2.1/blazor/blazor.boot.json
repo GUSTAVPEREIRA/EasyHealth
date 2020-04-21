@@ -5,7 +5,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "EasyHealth.Client.dll": "sha256-rbTxXnoUXzEQ7nbKFPQKEJbLUVpUq\/DsL5uI4P\/2MCA=",
+      "EasyHealth.Client.dll": "sha256-oPxVsO0QYVsiLk3N5iGY4R+Mc2B93s22KfCiTcDQC0M=",
       "System.Text.Json.dll": "sha256-pzCorxTCjbUODF5JuRgcHc8gVYEdSaKD9NWA6wZhTPE=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-jSbbdZ+4PD2T6Vi89+Tvmvg3VxTKeCToquIW6x+iTBM=",
       "mscorlib.dll": "sha256-Gqei7bi4XYsHg8yfeIwq9YZf9lFBg0tbqiF7Y4Ep2fU=",
@@ -43,18 +43,19 @@
       "Microsoft.AspNetCore.Components.dll": "sha256-frGTd\/pHKY90\/MumXJBc9G549bt9caoHvQYRkXRv6Wg=",
       "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-45ia6XmGIa5WI3cHUIE9KhVornlZleYW+B5FPpfD1wQ=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-0mTVm3L07hb2T9ruRLp+9hi0\/Dvyvl3jFkgyT149RgA=",
-      "EasyHealth.Shared.dll": "sha256-rTQ5LIY8dQyxX0kEQOUevSCxUw9KlPbPZKQyqkelvgg=",
+      "EasyHealth.Shared.dll": "sha256-z5mS5uEaz05OJSfb6C4bcR6cImvcZ9nRaXWWDqp\/h+U=",
+      "Blazored.LocalStorage.dll": "sha256-fWwjvztyZqVR47Lr3GGvh2S5TrD635IoiUP2hUI4AVg=",
+      "Microsoft.JSInterop.dll": "sha256-mNmeKS74MckiQxDsRS+6zzfJJ\/3wkbsjGxRpSS1UVT8=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-ASQUNa42c4EoMZuDg22e4UjmhkRoQmCFX5M9CkWEkaM=",
       "Microsoft.Extensions.DependencyInjection.dll": "sha256-8Y81cOKaNJHZZvHu0TROikruBOenBHdE5WwI2BOkNNE=",
       "Microsoft.Extensions.Configuration.dll": "sha256-iUTfpj7A29tIp2gl2fLM+w1MwyI8XMmUV8gFe+mJBZI=",
       "Microsoft.Extensions.Primitives.dll": "sha256-DG1MjidH81NA50uWH63eWmXLCxt18sJzoF2oXVlyvlY=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-D1gbYUWxCdwEKvWRcGQoVikKs0zgWMUenGMDEaDRxrc=",
-      "Microsoft.JSInterop.dll": "sha256-mNmeKS74MckiQxDsRS+6zzfJJ\/3wkbsjGxRpSS1UVT8=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-As4J4IKSKh3bNALtK4PSknM5suoP1j6I5YXiOIrIZ3U="
     },
     "pdb": {
-      "EasyHealth.Client.pdb": "sha256-E82XQ+rPZTpLRAz5qO3haemCvC4o8+w4TQaXgxOgMJ0=",
-      "EasyHealth.Shared.pdb": "sha256-+nOXorx7+8flMfHUN4TN8fsnebAfgb2WFdhvidXnHoQ="
+      "EasyHealth.Client.pdb": "sha256-Qqa6\/qw7rgc7E1MIAjF0gxOx93l92wCRuvCtWuQNEaE=",
+      "EasyHealth.Shared.pdb": "sha256-vCWJDjCkHcDW8+1qJAgM\/X\/wyzgvd69Ei0F\/pBS9m8o="
     },
     "runtime": {
       "dotnet.3.2.0-preview2.20159.2.js": "sha256-80Q7rIpqLxXzuMWqtC+FCBNrG15kR\/r+ba08n2TpQO0=",

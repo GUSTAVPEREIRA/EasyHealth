@@ -1,0 +1,39 @@
+﻿@page "/HospitalSupply/Create"
+@inject HttpClient http
+@inject NavigationManager navigator
+@using System.Text.Json
+ 
+<h3>Novo insumo</h3>
+
+<HospitalSupplyForm ButtonTextCancel="Cancelar" ButtonTextSubmit="Salvar" hospitalSupply="@hospitalSupply" 
+                    OnValidSubmit="@CreateHospitalSupply" SupplyCategories="@SupplyCategories">
+</HospitalSupplyForm>
+
+@code {
+    HospitalSupply hospitalSupply = new HospitalSupply();
+    List<SupplyCategory> SupplyCategories = new List<SupplyCategory>();
+
+    async Task CreateHospitalSupply()
+    {
+        if (hospitalSupply.SupplyCategoryId != 0)
+        {
+            await http.PostJsonAsync("/api/HospitalSupply/Add", hospitalSupply);
+            navigator.NavigateTo("/HospitalSupply");
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadSupplyCategories();
+    }
+
+    async Task LoadSupplyCategories()
+    {
+        var httpResponse = await http.GetAsync($"/api/SupplyCategory/GetAll");
+        var responseString = await httpResponse.Content.ReadAsStringAsync();
+        SupplyCategories = JsonSerializer.Deserialize<List<SupplyCategory>>(responseString, new JsonSerializerOptions()
+        {
+            PropertyNameCaseInsensitive = true
+        });
+    }
+}

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "U6xS2AA3FvTSmKL1PundSY7itgDdO0cGmVRDJm0wiCO0gJrDJDD64shNhVZxh+zE87BMgF+6+mmcl3IXPvdMVQ==",
+  "dgSpecHash": "z3BXuAcAPn/U4xySHLBQl3d8ECRxnLku0PL7PKUwHVwgxgCw5wLik9zwgrU1/uqVFeloPVZBeKRNS+xBhsLRmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\EasyHealth\\Client\\EasyHealth.Client.csproj",
+  "projectFilePath": "C:\\Users\\gugup\\OneDrive\\Área de Trabalho\\C#\\Projetos\\EasyHealth\\EasyHealth\\EasyHealth\\Client\\EasyHealth.Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\gugup\\.nuget\\packages\\blazored.localstorage\\2.1.5\\blazored.localstorage.2.1.5.nupkg.sha512",
     "C:\\Users\\gugup\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.2\\microsoft.aspnetcore.authorization.3.1.2.nupkg.sha512",
     "C:\\Users\\gugup\\.nuget\\packages\\microsoft.aspnetcore.blazor.httpclient\\3.2.0-preview2.20160.5\\microsoft.aspnetcore.blazor.httpclient.3.2.0-preview2.20160.5.nupkg.sha512",
     "C:\\Users\\gugup\\.nuget\\packages\\microsoft.aspnetcore.components\\3.1.2\\microsoft.aspnetcore.components.3.1.2.nupkg.sha512",

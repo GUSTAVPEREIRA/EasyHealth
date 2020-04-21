@@ -15,3 +15,12 @@ C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\Easy
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Shared\obj\Debug\netstandard2.1\EasyHealth.Shared.AssemblyInfo.cs
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Shared\obj\Debug\netstandard2.1\EasyHealth.Shared.dll
 C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\EasyHealth\Shared\obj\Debug\netstandard2.1\EasyHealth.Shared.pdb
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\Shared\bin\Debug\netstandard2.1\EasyHealth.Shared.deps.json
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\Shared\bin\Debug\netstandard2.1\EasyHealth.Shared.dll
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\Shared\bin\Debug\netstandard2.1\EasyHealth.Shared.pdb
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\Shared\obj\Debug\netstandard2.1\EasyHealth.Shared.csprojAssemblyReference.cache
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\Shared\obj\Debug\netstandard2.1\EasyHealth.Shared.csproj.CoreCompileInputs.cache
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\Shared\obj\Debug\netstandard2.1\EasyHealth.Shared.AssemblyInfoInputs.cache
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\Shared\obj\Debug\netstandard2.1\EasyHealth.Shared.AssemblyInfo.cs
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\Shared\obj\Debug\netstandard2.1\EasyHealth.Shared.dll
+C:\Users\gugup\OneDrive\Área de Trabalho\C#\Projetos\EasyHealth\EasyHealth\EasyHealth\Shared\obj\Debug\netstandard2.1\EasyHealth.Shared.pdb

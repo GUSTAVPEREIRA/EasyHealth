@@ -1,6 +1,7 @@
 ﻿namespace EasyHealth.Server.Repositories.IServices
 {
     using EasyHealth.Shared.Model;
+    using System.Collections.Generic;
     using System.Linq;
 
     public interface IServiceSupplyCategory
@@ -10,5 +11,6 @@
         SupplyCategory GetSupplyCategory(int id);
         SupplyCategory UpdateSupplyCategory(ref SupplyCategory supplyCategory);
         void DeleteSupplyCategory(int id);
+        List<SupplyCategory> GetAllSupplyCategories();
     }
 }

@@ -24,7 +24,10 @@ namespace EasyHealth.Server
             var connectionString = Configuration.GetConnectionString("Default");
             RegisterService = new RegisterService(ref services);
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
