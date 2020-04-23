@@ -55,7 +55,7 @@
            
             if (!string.IsNullOrEmpty(name))
             {
-                queryable = queryable.Where(w => w.Name.Contains(name));
+                queryable = queryable.Where(w => w.Name.Contains(name) || w.SupplyCategory.Name.Contains(name));
             }
 
             return queryable;
